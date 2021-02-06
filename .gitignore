@@ -1,0 +1,8 @@
+# Windows files/links
+*.lnk
+
+# VScode files
+.vscode/
+
+# Out directory
+out/
