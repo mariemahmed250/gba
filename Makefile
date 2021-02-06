@@ -3,13 +3,13 @@
 #---------------------------------------------------------------------------------
 
 # Path variable
-export DEVKITARM = ~/Documents/Stuff/School/MIE438/Project/devkitPro/devkitARM
+export DEVKITARM = ~/Documents/Stuff/School/MIE438/Project/devkitPro/devkitARM/
 
 ifeq ($(strip $(DEVKITARM)),)
 $(error "Please set DEVKITARM in your environment. export DEVKITARM=<path to>devkitARM")
 endif
 
-include $(DEVKITARM)/gba_rules
+include $(DEVKITARM)gba_rules
 
 #---------------------------------------------------------------------------------
 # TARGET is the name of the output
@@ -30,16 +30,16 @@ INCLUDES	:= include resources
 DATA		:= data
 MUSIC		:=
 
-COMPILER = $(DEVKITARM)/bin/
-TOOLS = $(DEVKITARM)/tools/bin/
-OUT = ~/Documents/Stuff/School/MIE438/Project/gba/out/$(FILE)/
+COMPILER = $(DEVKITARM)bin/
+TOOLS = $(DEVKITPRO)/tools/bin/
+OUT = ~/Documents/Stuff/School/MIE438/Project/gba/out/
 
 # Flags
 ARCH	:=	-mthumb -mthumb-interwork
 
 CFLAGS:= -g -Wall -O3 -mcpu=arm7tdmi -mtune=arm7tdmi -fomit-frame-pointer -ffast-math -fno-strict-aliasing $(ARCH)
 
-FILE := pong
+FILE := color
 
 compile:
 	if [ -d $(OUT) ]; then rm -rf $(OUT); mkdir $(OUT); else mkdir $(OUT); fi

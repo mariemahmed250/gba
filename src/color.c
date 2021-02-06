@@ -1,4 +1,4 @@
-int mmap(x, y) {
+int mmap(int x, int y) {
 	// The Gameboy has a 15bit 240x160 pixel colour LCD screen
 	// VRAM starts from 0x600_0000 - 0x601_7FFF (96kb)
 	// Need to map x,y position to global VRAM position in memory
@@ -6,7 +6,7 @@ int mmap(x, y) {
 }
 
 
-int rgb(r, g, b) {
+int rgb(int r, int g, int b) {
 	// VRAM is RGB and 15bits, so first 5bits R, next 5bits G, last 5 bits B
 	// Red   = 000000000011111 (0x001F)
 	// Green = 000001111100000 (0x03E0)
